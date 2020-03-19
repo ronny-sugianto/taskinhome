@@ -33,11 +33,11 @@ io.on('connection', function(socket) {
 
 const server = http.createServer(app);
 
-server.on('error', (err) => {
-    logEvent.emit('APP_ERROR'),{
-        logTitle : '[SERVER ERROR]',
-        logMessage : err
-    }
-});
+// server.on('error', (err) => {
+//     logEvent.emit('APP_ERROR'),{
+//         logTitle : '[SERVER ERROR]',
+//         logMessage : err
+//     }
+// });
 
 module.exports = server;
