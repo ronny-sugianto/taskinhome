@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FP-SMM => (Ronny)</title>
+</head>
+<body>
+
+    <center><h1>Server Is Running</h1></center>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+    <script>
+    var socket = io.connect('http://80.211.230.155:3000');
+    socket.on('/', function (data) {
+        console.log(data);
+        socket.emit('my other event', { my: 'data' });
+    
+    });
+    </script>
+</body>
+</html>

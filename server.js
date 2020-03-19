@@ -6,9 +6,11 @@ const routes = require('./src/routes/base');
 const logEvent = require('./src/event/myEmitter');
 const loggingListener = require('./src/event/loggingListener');
 const middleware = require('./src/middleware/app-middleware');
+const socket = require('./socket');
 
 dotenv.config();
 loggingListener();
+app.use(socket);
 app.use(middleware);
 app.use(routes);
 const server = http.createServer(app);
