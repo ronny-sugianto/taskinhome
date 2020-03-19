@@ -3,8 +3,9 @@ const router = express.Router();
 const logEvent = require('../event/myEmitter');
 const chatRoute = require('./chat.route');
 const validationRoute = require('./validation.route');
+const socket = require('./socket');
 
-
+route.use('/',socket);
 router.use('/chat', chatRoute);
 router.use('/validation', validationRoute);
 
