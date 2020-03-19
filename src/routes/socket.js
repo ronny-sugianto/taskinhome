@@ -1,7 +1,7 @@
 var app = require('express')();
 var http = require('http').createServer(app);
 var io = require('socket.io')(http);
-var Chat = require('../src/services/chat.service');
+var Chat = require('../services/chat.service');
 
 let temp;
 
@@ -17,7 +17,7 @@ io.on('connection', function(socket) {
     socket.on('send_message', (data) => {
         temp.push(data);
         io.emit('receive_message',temp);
-        let post = await Chat().createChat(data);
-        console.log(post);
+         Chat().createChat(data);
+        
     });
 });

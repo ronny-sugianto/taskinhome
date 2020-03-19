@@ -15,7 +15,7 @@ class ChatService {
             });
             throw new Error(e);
         }
-        const optionTime = {hour12:false};
+       
         result.date = moment(result.date).format('DD-MM-YYYY hh:mm')
         return result;
     }
